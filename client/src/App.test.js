@@ -7,7 +7,7 @@ import { Cards } from "./Cards";
 
 afterEach(rtl.cleanup);
 
-it("shows that the word is present ", () => {
+it("shows that the component displaying the players is being rendered properly", () => {
   const wrapper = rtl.render(<Navbar />);
   wrapper.debug();
 
@@ -16,8 +16,8 @@ it("shows that the word is present ", () => {
   expect(checkPlayers).toBeInTheDocument();
 });
 
-it("shows the length of players array", () => {
-  const wrapper = rtl.render(<App/>);
+it("shows that the subject of the app is displaying properly", () => {
+  const wrapper = rtl.render(<App />);
   wrapper.debug();
 
   const checkName = wrapper.queryByText(/world/i);
