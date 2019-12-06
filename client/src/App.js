@@ -29,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar/>
+        <Navbar />
         {this.state.players.map(data => (
           <Cards player={data} />
         ))}

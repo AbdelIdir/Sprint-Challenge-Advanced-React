@@ -42,9 +42,8 @@
   background: silver;
   width: 200px;
   margin: 20px;
+  border-radius: 15px;
 }
-
-
 
 .navbar {
   align-items: center;
@@ -69,7 +68,7 @@
 }
 
 .toggle {
-  background:purple;
+  background: purple;
   border-radius: 50px;
   height: 18px;
   left: 0;
@@ -81,7 +80,6 @@
 .toggled {
   left: 18px;
 }
-
 
 .dark-mode {
   color: #fff;
