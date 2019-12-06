@@ -27,7 +27,16 @@ class App extends Component {
       });
   }
   render() {
-    return <div className="App"></div>;
+    return (
+      <div className="App">
+        {this.state.players.map((data, id) => (
+          <div className="card" key={id}>
+            <p>{data.name}</p>
+            <p>{data.country}</p>
+          </div>
+        ))}
+      </div>
+    );
   }
 }
 
