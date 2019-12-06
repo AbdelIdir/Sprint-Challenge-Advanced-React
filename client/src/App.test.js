@@ -2,21 +2,25 @@ import React from "react";
 import App from "./App";
 import * as rtl from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
+import Navbar from "./NavBar";
 
-describe("helpers", () => {
-  // describe block
-  it("seems to work", () => {
-    // test
-    expect(5).toBeDefined(); // assertions
-    expect(5).toBeTruthy();
-    expect(5).toBeGreaterThan(4);
-    expect(5).not.toBeFalsy();
-    expect(5).toBeLessThanOrEqual(5);
-    expect(5).not.toBeNaN();
-    expect("5").toMatch(/5/);
-    expect(5).toBe(5);
-    expect(() => {
-      throw new Error("That sounds like trolling");
-    }).toThrow();
-  });
+afterEach(rtl.cleanup);
+// beforeEach, beforeAll, afterAll
+
+it("shows that the word is present ", () => {
+  // step 3 - mount the component we want to test
+  const wrapper = rtl.render(<Navbar />);
+  wrapper.debug();
+  // step 4 - capture the element of interest BY "READABLE" PROPERTY
+  // we normally care about the readable text
+  // or the aria attributes (screen readers)
+  const learnReactElement = wrapper.queryByText(/players/i);
+
+  // const dis = wrapper.queryByText(/display/i)
+
+  // step 5 - assert that the element is there
+  expect(learnReactElement).toBeInTheDocument();
+
+  // const linkElement = getByText(/2/i); // 2 because we clicked twice
+  // expect(linkElement).toBeInTheDocument()
 });
