@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
-
+import { Cards } from "./Cards";
+import Navbar from "./NavBar";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -29,11 +29,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.players.map((data, id) => (
-          <div className="card" key={id}>
-            <p>{data.name}</p>
-            <p>{data.country}</p>
-          </div>
+        <Navbar/>
+        {this.state.players.map(data => (
+          <Cards player={data} />
         ))}
       </div>
     );
